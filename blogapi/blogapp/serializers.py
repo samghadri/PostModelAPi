@@ -1,8 +1,8 @@
-from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer
 from .models import Post
 
-class PostSerializer(serializers.Serializer):
-    title = serializers.CharField(max_length=200)
-    text = serializers.TextField()
-    created = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+
+class PostSerializer(ModelSerializer):
+    class Meta:
+        model = Post
+        fields =['author','title','text']
