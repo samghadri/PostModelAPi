@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.CharField(max_length=30)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
@@ -19,7 +19,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse("posts:detail", kwargs={"slug": self.slug})
-    
+
     class Meta:
         ordering = ['created_date']
 
