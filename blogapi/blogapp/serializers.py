@@ -7,7 +7,14 @@ class PostSerializer(ModelSerializer):
         model = Post
         fields =['author','title','text','slug']
 
+
 class PostDetailSerializer(ModelSerializer):
     class Meta:
         model = Post
         fields =['author','title','text','slug']
+
+
+class PostCreateSerializer(ModelSerializer):
+    class Meta:
+        model = Post
+        fields =['author','title','text']

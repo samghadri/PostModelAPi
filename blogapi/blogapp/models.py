@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django.db.models.signals import pre_save
 
 
 class Post(models.Model):
@@ -13,9 +14,11 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(unique=True)
 
-    def publish(self):
+
+    def publish(self, *args, **kwargs):
+        self.slug = slugify(self.title)
         self.published_date = timezone.now()
-        self.save()
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("posts:detail", kwargs={"slug": self.slug})
