@@ -1,1 +1,3 @@
 blogapi/blogapi/secret_key.py
+blogapi/blogapp/__pycache__
+blogapi/db.sqlite3
