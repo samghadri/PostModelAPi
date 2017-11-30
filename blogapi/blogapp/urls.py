@@ -9,4 +9,5 @@ urlpatterns =[
     url(r'^(?P<slug>[\w-]+)/$',views.PostDetailApi.as_view(),name='detail'),
     url(r'^(?P<slug>[\w-]+)/delete/$',views.PostDeleteApi.as_view(),name='delete'),
     url(r'^(?P<slug>[\w-]+)/edit/$',views.PostUpdateApi.as_view(),name='update'),
+    # url(r"^signup/$", views.UserCreateApi.as_view(), name="signup"),
 ]

@@ -82,14 +82,12 @@ WSGI_APPLICATION = 'blogapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog_api',
+        'NAME': 'blogapi',
         'USER': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
-
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
